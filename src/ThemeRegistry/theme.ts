@@ -1,21 +1,10 @@
 import { extendTheme } from "@mui/joy/styles";
-import { Cairo } from "next/font/google";
-
-const cairo = Cairo({
-  weight: ["400", "500", "600", "700", "800", "900"],
-  subsets: ["arabic"],
-  adjustFontFallback: false, // prevent NextJS from adding its own fallback font
-  fallback: ["var(--joy-fontFamily-fallback)"], // use Joy UI's fallback font
-  display: "swap",
-  preload: true,
-  variable: "--font-cairo",
-});
 
 const theme = extendTheme({
   direction: "rtl",
   fontFamily: {
-    body: cairo.style.fontFamily,
-    display: cairo.style.fontFamily,
+    body: "cairo",
+    display: "cairo",
   },
   colorSchemes: {
     light: {

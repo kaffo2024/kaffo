@@ -1,7 +1,5 @@
 import ContactUs from "@/src/components/contact-us/ContactUs";
 import PageHeader from "@/src/components/page-header/PageHeader";
-import { Container } from "@mui/joy";
-import React from "react";
 
 function page() {
   return (
@@ -10,9 +8,9 @@ function page() {
         background="/pages-headers/contact.jpg"
         title="تـواصـل مـعـانـا"
       />
-      <Container>
+      <main className="pt-16 md:pt-20 lg:pt-24">
         <ContactUs />
-      </Container>
+      </main>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import { getAvailableEducationList } from "@/src/actions/actions";
 import PageHeader from "@/src/components/page-header/PageHeader";
+import SectionTitles from "@/src/components/section-titles/SectionTitles";
 import StagesCards from "@/src/components/stages-cards/StagesCards";
+import TeamSlider from "@/src/components/team-slider/TeamSlider";
 import { Divider, Typography } from "@mui/joy";
 
 import React from "react";
@@ -34,6 +36,9 @@ export default async function page() {
       </Divider>
 
       <StagesCards items={JSON.parse(JSON.stringify(data))} />
+
+      <SectionTitles text="فريق العمل" />
+      <TeamSlider />
     </div>
   );
 }

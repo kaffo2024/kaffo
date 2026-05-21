@@ -2,7 +2,6 @@
 import React from "react";
 import SwiperComponent from "../swiper/SwiperComponent";
 import { SwiperSlide } from "swiper/react";
-import CategoryCard from "../category-card/CategoryCard";
 
 import { Navigation, Pagination } from "swiper/modules";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";

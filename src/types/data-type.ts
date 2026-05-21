@@ -71,6 +71,21 @@ export interface ErrorsType {
   message: string;
 }
 
+export interface CategoryType {
+  id: number;
+  ref: string;
+  url: string;
+  name: string;
+  description: string;
+  shortDescription: string;
+  image: string;
+  effect: number;
+  icon: string;
+  color: string;
+  gradient: string;
+  features: string[];
+}
+
 export interface ServicesType {
   id: string;
   title: string;
@@ -88,5 +103,7 @@ export interface ServicesProjectsType {
   cover: string;
   slug: string;
   overview: string;
+  year_completed?: string;
+  partner?: string;
   gallery: ProjectGalleryType[];
 }

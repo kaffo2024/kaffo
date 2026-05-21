@@ -1,0 +1,71 @@
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  /* position: fixed; */
+  width: 100%;
+}
+
+/* Timeline specific styles */
+.timeline-dot {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Prevent body scroll when timeline is active */
+.timeline-active {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Smooth transitions */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for better UX */
+.timeline-container::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline-container {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.timeline-section {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+
+/* Animation classes */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(14, 107, 129, 0.3);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 40px rgba(14, 107, 129, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+

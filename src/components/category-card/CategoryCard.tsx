@@ -1,4 +1,3 @@
-import * as React from "react";
 import AspectRatio from "@mui/joy/AspectRatio";
 
 import Image from "next/image";

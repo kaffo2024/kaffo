@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "backend.kaffo.co",
+        hostname: "backend.progym-shebin.com",
       },
       {
         protocol: "http",

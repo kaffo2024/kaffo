@@ -7,7 +7,6 @@ import type {
   EmotionCache,
   Options as OptionsOfCreateCache,
 } from "@emotion/cache";
-import Lenis from "@studio-freight/lenis";
 
 export type NextAppDirEmotionCacheProviderProps = {
   /** This is the options passed to createCache() from 'import createCache from "@emotion/cache"' */
@@ -62,7 +61,7 @@ export default function NextAppDirEmotionCacheProvider(
     inserted.forEach(({ name, isGlobal }) => {
       const style = registry.cache.inserted[name];
 
-      if (typeof style !== "boolean") {
+      if (typeof style === "string") {
         if (isGlobal) {
           globals.push({ name, style });
         } else {

@@ -1,29 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "cairo";
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #0e6b81 0%, #0e6b81 50%, #fbbc60 100%);
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0e6b81 0%, #fbbc60 50%, #0e6b81 100%);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0e6b81 #f1f1f1;
 }
 
 html {
   height: 100%;
-
 }
 html,
 body {
+  scroll-behavior: smooth;
   max-width: 100vw;
   overflow-x: hidden;
-
-
 }
-
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
@@ -43,25 +72,139 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-
 .swiper-pagination .swiper-pagination-bullet {
-  clip-path: polygon( 85.207% 89.604%,85.207% 89.604%,82.984% 91.568%,80.719% 93.328%,78.412% 94.885%,76.062% 96.237%,73.667% 97.383%,71.228% 98.323%,68.743% 99.055%,66.212% 99.58%,63.634% 99.895%,61.009% 100%,61.009% 100%,59.888% 99.982%,58.794% 99.93%,57.727% 99.842%,56.688% 99.719%,55.677% 99.561%,54.693% 99.367%,53.736% 99.139%,52.807% 98.875%,51.906% 98.577%,51.032% 98.243%,0% 80.966%,0% 80.966%,1.844% 81.291%,3.661% 81.123%,5.45% 80.461%,7.211% 79.305%,8.945% 77.654%,10.651% 75.506%,12.33% 72.86%,13.982% 69.717%,15.605% 66.075%,17.202% 61.933%,17.202% 61.933%,18.045% 59.513%,18.854% 56.997%,19.63% 54.386%,20.374% 51.681%,21.087% 48.884%,21.768% 45.994%,22.419% 43.012%,23.04% 39.94%,23.633% 36.779%,24.197% 33.529%,24.197% 33.529%,24.813% 30.313%,25.562% 27.256%,26.443% 24.357%,27.46% 21.616%,28.612% 19.034%,29.903% 16.609%,31.332% 14.343%,32.902% 12.234%,34.613% 10.284%,36.468% 8.492%,36.468% 8.492%,38.463% 6.867%,40.596% 5.416%,42.867% 4.14%,45.275% 3.036%,47.821% 2.105%,50.505% 1.345%,53.326% 0.755%,56.285% 0.335%,59.381% 0.084%,62.615% 0%,62.615% 0%,65.57% 0.171%,68.45% 0.684%,71.253% 1.538%,73.982% 2.731%,76.634% 4.264%,79.211% 6.135%,81.712% 8.344%,84.138% 10.888%,86.487% 13.769%,88.761% 16.984%,88.761% 16.984%,90.915% 20.392%,92.837% 23.854%,94.527% 27.367%,95.987% 30.934%,97.219% 34.553%,98.224% 38.225%,99.003% 41.95%,99.558% 45.728%,99.89% 49.558%,100% 53.441%,100% 53.441%,99.99% 54.451%,99.959% 55.461%,99.907% 56.471%,99.835% 57.482%,99.742% 58.492%,99.628% 59.502%,99.494% 60.512%,99.339% 61.523%,99.164% 62.533%,98.968% 63.543%,98.968% 63.543%,98.332% 66.649%,97.526% 69.641%,96.552% 72.521%,95.412% 75.289%,94.108% 77.947%,92.643% 80.494%,91.018% 82.933%,89.236% 85.264%,87.298% 87.487%,85.207% 89.604% );
+  clip-path: polygon(
+    85.207% 89.604%,
+    85.207% 89.604%,
+    82.984% 91.568%,
+    80.719% 93.328%,
+    78.412% 94.885%,
+    76.062% 96.237%,
+    73.667% 97.383%,
+    71.228% 98.323%,
+    68.743% 99.055%,
+    66.212% 99.58%,
+    63.634% 99.895%,
+    61.009% 100%,
+    61.009% 100%,
+    59.888% 99.982%,
+    58.794% 99.93%,
+    57.727% 99.842%,
+    56.688% 99.719%,
+    55.677% 99.561%,
+    54.693% 99.367%,
+    53.736% 99.139%,
+    52.807% 98.875%,
+    51.906% 98.577%,
+    51.032% 98.243%,
+    0% 80.966%,
+    0% 80.966%,
+    1.844% 81.291%,
+    3.661% 81.123%,
+    5.45% 80.461%,
+    7.211% 79.305%,
+    8.945% 77.654%,
+    10.651% 75.506%,
+    12.33% 72.86%,
+    13.982% 69.717%,
+    15.605% 66.075%,
+    17.202% 61.933%,
+    17.202% 61.933%,
+    18.045% 59.513%,
+    18.854% 56.997%,
+    19.63% 54.386%,
+    20.374% 51.681%,
+    21.087% 48.884%,
+    21.768% 45.994%,
+    22.419% 43.012%,
+    23.04% 39.94%,
+    23.633% 36.779%,
+    24.197% 33.529%,
+    24.197% 33.529%,
+    24.813% 30.313%,
+    25.562% 27.256%,
+    26.443% 24.357%,
+    27.46% 21.616%,
+    28.612% 19.034%,
+    29.903% 16.609%,
+    31.332% 14.343%,
+    32.902% 12.234%,
+    34.613% 10.284%,
+    36.468% 8.492%,
+    36.468% 8.492%,
+    38.463% 6.867%,
+    40.596% 5.416%,
+    42.867% 4.14%,
+    45.275% 3.036%,
+    47.821% 2.105%,
+    50.505% 1.345%,
+    53.326% 0.755%,
+    56.285% 0.335%,
+    59.381% 0.084%,
+    62.615% 0%,
+    62.615% 0%,
+    65.57% 0.171%,
+    68.45% 0.684%,
+    71.253% 1.538%,
+    73.982% 2.731%,
+    76.634% 4.264%,
+    79.211% 6.135%,
+    81.712% 8.344%,
+    84.138% 10.888%,
+    86.487% 13.769%,
+    88.761% 16.984%,
+    88.761% 16.984%,
+    90.915% 20.392%,
+    92.837% 23.854%,
+    94.527% 27.367%,
+    95.987% 30.934%,
+    97.219% 34.553%,
+    98.224% 38.225%,
+    99.003% 41.95%,
+    99.558% 45.728%,
+    99.89% 49.558%,
+    100% 53.441%,
+    100% 53.441%,
+    99.99% 54.451%,
+    99.959% 55.461%,
+    99.907% 56.471%,
+    99.835% 57.482%,
+    99.742% 58.492%,
+    99.628% 59.502%,
+    99.494% 60.512%,
+    99.339% 61.523%,
+    99.164% 62.533%,
+    98.968% 63.543%,
+    98.968% 63.543%,
+    98.332% 66.649%,
+    97.526% 69.641%,
+    96.552% 72.521%,
+    95.412% 75.289%,
+    94.108% 77.947%,
+    92.643% 80.494%,
+    91.018% 82.933%,
+    89.236% 85.264%,
+    87.298% 87.487%,
+    85.207% 89.604%
+  );
   width: 20px !important;
   height: 20px !important;
   opacity: 1;
-  background: var(--variant-solidBg, var(--joy-palette-neutral-solidBg, #0E6B81))  
+  background: var(
+    --variant-solidBg,
+    var(--joy-palette-neutral-solidBg, #0e6b81)
+  );
 }
 
 .swiper-pagination-bullet-active {
   background-color: var(--joy-palette-primary-solidBg) !important;
 }
 
-
 .swiper {
   overflow: hidden;
 }
 
-.client-slider  .swiper-slide {
+.client-slider .swiper-slide {
   opacity: 0.5 !important;
   transition: opacity 0.6s linear !important;
 }
@@ -72,12 +215,171 @@ html.lenis, html.lenis body {
 .custom-video {
   border: none !important;
   background-color: transparent !important;
-
 }
 
-
 @media screen and (max-width: 576px) {
-  .swiper-button-prev, .swiper-button-next {
-    display:  none !important;
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
   }
+}
+
+/* Add these to your existing globals.css */
+
+/* Subtle gradient overlay on header */
+.ant-layout-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.8)
+  );
+  z-index: -1;
+}
+
+/* Enhanced dropdown animations */
+.rtl-dropdown {
+  animation: dropdownFade 0.2s ease-out;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth link hover effect */
+.group:hover .nav-link-underline {
+  width: 100%;
+}
+
+/* Subtle active state pulse */
+@keyframes subtlePulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.active-nav-item {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+/* Enhanced mobile menu backdrop */
+@media (max-width: 768px) {
+  .ant-layout-header {
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(to right, #3b82f6, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle shadow transitions */
+.shadow-sm\/50 {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.hover\:shadow {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+}
+
+/* for loading and not found pages */
+
+/* slow spin animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* pulse animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* float animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* bounce animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
 }
